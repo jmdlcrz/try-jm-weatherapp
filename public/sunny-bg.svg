@@ -1,0 +1,93 @@
+<!-- sunny-bg.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#87CEFA"/>
+      <stop offset="70%" stop-color="#E6F7FF"/>
+    </linearGradient>
+
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD46A" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#FFD46A" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFD46A" stop-opacity="0"/>
+    </radialGradient>
+
+    <g id="ray">
+      <rect x="-8" y="-140" width="16" height="120" rx="8" ry="8" opacity="0.9"/>
+    </g>
+
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- background sky -->
+  <rect width="100%" height="100%" fill="url(#sky)"/>
+
+  <!-- distant rolling hills -->
+  <g transform="translate(0,520)">
+    <path d="M0,160 C200,80 400,220 800,180 C1200,140 1400,220 1600,160 L1600,400 L0,400 Z" fill="#C7F0C9" opacity="0.9"/>
+    <path d="M0,200 C300,120 500,260 900,220 C1300,180 1500,260 1600,200 L1600,400 L0,400 Z" fill="#B3E8B3" opacity="0.9"/>
+  </g>
+
+  <!-- decorative foreground grasses -->
+  <g transform="translate(0,640)">
+    <rect x="0" y="0" width="1600" height="260" fill="#77C86C"/>
+  </g>
+
+  <!-- Sun on the right -->
+  <g transform="translate(1250,170)">
+    <!-- soft glow -->
+    <circle cx="0" cy="0" r="160" fill="url(#sunGlow)" filter="url(#soft)"/>
+    <!-- sun core -->
+    <circle cx="0" cy="0" r="80" fill="#FFD46A"/>
+
+    <!-- animated rays -->
+    <g id="rays" style="transform-origin:0px 0px;">
+      <use href="#ray" transform="rotate(0) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(30) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(60) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(90) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(120) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(150) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(180) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(210) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(240) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(270) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(300) translate(0,0)" fill="#FFD46A" />
+      <use href="#ray" transform="rotate(330) translate(0,0)" fill="#FFD46A" />
+      <!-- rotate animation (SMIL) -->
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="24s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- playful clouds drifting left-to-right -->
+  <g id="clouds" transform="translate(-200,120)" opacity="0.95">
+    <g transform="translate(160,80)">
+      <g>
+        <ellipse cx="0" cy="0" rx="70" ry="40" fill="#FFFFFF"/>
+        <ellipse cx="45" cy="-10" rx="55" ry="34" fill="#FFFFFF"/>
+        <ellipse cx="-45" cy="-6" rx="50" ry="30" fill="#FFFFFF"/>
+      </g>
+    </g>
+
+    <g transform="translate(540,40) scale(1.2)">
+      <g>
+        <ellipse cx="0" cy="0" rx="90" ry="52" fill="#FFFFFF" opacity="0.95"/>
+        <ellipse cx="60" cy="-12" rx="70" ry="42" fill="#FFFFFF" opacity="0.95"/>
+        <ellipse cx="-60" cy="-8" rx="60" ry="38" fill="#FFFFFF" opacity="0.95"/>
+      </g>
+    </g>
+
+    <!-- animation: translate group slowly -->
+    <animateTransform attributeName="transform" type="translate" dur="40s"
+      values="-400,120; 0,120; 400,120; -400,120" repeatCount="indefinite"/>
+  </g>
+
+  <!-- small sunlit birds (decorative) -->
+  <g transform="translate(200,160)" opacity="0.9">
+    <path d="M0,0 q20,-15 40,0" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M40,0 q20,-15 40,0" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <animateTransform attributeName="transform" type="translate" dur="12s" values="0,0; 40,-20; 0,0" repeatCount="indefinite"/>
+  </g>
+</svg>

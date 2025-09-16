@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; 
+}
+
+.bg-default {
+  background-image: url("/sunny-bg.svg");
+  background-size: cover;
+  background-position: center;
+  transition: background 0.8s ease-in-out;
+}
+
+.bg-sunny {
+  background-image: url("/sunny-bg.svg");
+  background-size: cover;
+  background-position: center;
+  transition: background 0.8s ease-in-out;
+}
+
+.bg-rainy {
+  background-image: url("/rainy-bg.svg");
+  background-size: cover;
+  background-position: center;
+  transition: background 0.8s ease-in-out;
+}
+
+.weather-bg {
+  background: url('/sunny-bg.svg') no-repeat center center;
+  background-size: cover; 
+}
+
